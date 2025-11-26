@@ -1,6 +1,6 @@
 # 🧪 Ecosystem QA Hub
 
-This repository is the central integration testing "auditor" for the Nova Ecosystem.
+This repository is the central integration testing "auditor" for the NovaEco.
 
 Its purpose is **not** to run unit tests (which live inside each enabler/sector repo). Its sole purpose is to test the **"seams" *between* repositories** to ensure all our decoupled services work together as a unified system.[3, 4]
 
