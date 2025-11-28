@@ -117,6 +117,6 @@ jobs:
         run: |
           echo "Promoting ${{ env.TAG }}..."
           gh api "repos/novaeco-tech/${{ env.REPO }}/releases/tags/${{ env.TAG }}" \
-            -X PATCH -f prerelease=false
+            -X PATCH -F prerelease=false 
         env:
           GITHUB_TOKEN: ${{ steps.app_token.outputs.token }}
