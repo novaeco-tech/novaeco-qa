@@ -116,7 +116,7 @@ jobs:
         if: success()
         run: |
           echo "Promoting ${{ env.TAG }}..."
-          gh api "repos/novaeco-tech/${{ env.REPO }}/releases/tags/${{ env.TAG }}" \
+          gh api "repos/novaeco-tech/${{ env.REPO }}/releases/tag/${{ env.TAG }}" \
             -X PATCH -F prerelease=false 
         env:
           GITHUB_TOKEN: ${{ steps.app_token.outputs.token }}
