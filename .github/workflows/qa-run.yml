@@ -115,8 +115,13 @@ jobs:
       - name: Promote Release
         if: success()
         run: |
-          echo "Promoting ${{ env.TAG }}..."
-          gh api "repos/novaeco-tech/${{ env.REPO }}/releases/tag/${{ env.TAG }}" \
-            -X PATCH -F prerelease=false 
+          echo "Promoting ${{ env.TAG }} to Stable..."
+          
+          # Use the high-level command which handles IDs automatically
+          gh release edit "${{ env.TAG }}" \
+            --repo "novaeco-tech/${{ env.REPO }}" \
+            --prerelease=false \
+            --latest
         env:
+          # Use the App Token we generated at the start
           GITHUB_TOKEN: ${{ steps.app_token.outputs.token }}
